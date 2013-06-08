@@ -1,7 +1,7 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Prefork SMTP Server",
    "author" : [
-      "memememomo <memememomo@gmail.com>"
+      "uchico <memememomo@gmail.com>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Minilla/v0.4.9, CPAN::Meta::Converter version 2.131560",
@@ -42,6 +42,8 @@
       },
       "runtime" : {
          "requires" : {
+            "Net::Server::Mail::SMTP" : "0.18",
+            "Parallel::Prefork" : "0.13",
             "perl" : "5.008005"
          }
       },
@@ -52,5 +54,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/memememomo/p5-Net-Server-Mail-SMTP-Prefork/issues"
+      },
+      "homepage" : "https://github.com/memememomo/p5-Net-Server-Mail-SMTP-Prefork",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/memememomo/p5-Net-Server-Mail-SMTP-Prefork.git",
+         "web" : "https://github.com/memememomo/p5-Net-Server-Mail-SMTP-Prefork"
+      }
+   },
    "version" : "0.01"
 }

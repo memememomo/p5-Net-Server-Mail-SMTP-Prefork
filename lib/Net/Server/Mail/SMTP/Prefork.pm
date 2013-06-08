@@ -115,26 +115,35 @@ __END__
 
 =head1 NAME
 
-Net::Server::Mail::SMTP::Prefork - It's new $module
+Net::Server::Mail::SMTP::Prefork - Prefork SMTP Server
 
 =head1 SYNOPSIS
 
     use Net::Server::Mail::SMTP::Prefork;
 
+    my $server = Net::Server::Mail::SMTP::Prefork->new(
+        host => 'localhost',
+        port => 2500,
+        max_workers => 20,
+    );
+    $server->set_callback('RCPT' => sub { return (1) });
+    $server->set_callback('DATA' => sub { return (1, 250, 'message queued') });
+    $server->run;
+
 =head1 DESCRIPTION
 
-Net::Server::Mail::SMTP::Prefork is ...
+Net::Server::Mail::SMTP::Prefork is preforking SMTP server.
 
 =head1 LICENSE
 
-Copyright (C) memememomo.
+Copyright (C) uchico.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 AUTHOR
 
-memememomo E<lt>memememomo@gmail.comE<gt>
+uchico E<lt>memememomo@gmail.comE<gt>
 
 =cut
 
